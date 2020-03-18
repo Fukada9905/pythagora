@@ -1,0 +1,57 @@
+delimiter //
+CREATE TABLE wk_202000_details(
+	work_detail_id				int UNSIGNED		NOT NULL							COMMENT 'ワーク明細ID'
+,	work_id						int UNSIGNED		NOT NULL							COMMENT 'ワークID'
+,	SYORIYMD					datetime			DEFAULT NULL						COMMENT '処理日時'
+,	SYUKAYMD					date				DEFAULT NULL						COMMENT '出荷日'
+,	NOHINYMD					date				DEFAULT NULL						COMMENT '納品日'
+,	DENPYOYMD					date				DEFAULT NULL						COMMENT '伝票日付'
+,	NNSICD						varchar(10)			DEFAULT NULL						COMMENT '荷主コード'
+,	NNSINM						varchar(50)			DEFAULT NULL						COMMENT '荷主名'
+,	JGSCD_SK					varchar(10)			DEFAULT NULL						COMMENT '出荷元事業所コード'
+,	JGSNM_SK					varchar(50)			DEFAULT NULL						COMMENT '出荷元事業所名称'
+,	SNTCD_SK					varchar(10)			DEFAULT NULL						COMMENT '出荷元センターコード'
+,	SNTNM_SK					varchar(50)			DEFAULT NULL						COMMENT '出荷元センター名称'
+,	UNSKSCD						varchar(10)			DEFAULT NULL						COMMENT '運送会社コード'
+,	UNSKSNM						varchar(50)			DEFAULT NULL						COMMENT '運送会社名称'
+,	JGSCD_NK					varchar(10)			DEFAULT NULL						COMMENT '入荷事業所コード'
+,	JGSNM_NK					varchar(50)			DEFAULT NULL						COMMENT '入荷事業所名称'
+,	SNTCD_NK					varchar(10)			DEFAULT NULL						COMMENT '入荷センターコード'
+,	SNTNM_NK					varchar(50)			DEFAULT NULL						COMMENT '入荷センター名称'
+,	SKHNYKBN1					varchar(10)			DEFAULT NULL						COMMENT 'ＩＤ'
+,	SKHNYKBN1NM					varchar(50)			DEFAULT NULL						COMMENT 'ＩＤ名称'
+,	DENNO						varchar(20)			DEFAULT NULL						COMMENT '伝票番号'
+,	DENGNO						int					NOT NULL DEFAULT 0					COMMENT '伝票行番号'
+,	BIKO						varchar(200)		DEFAULT NULL						COMMENT '備考'
+,	SHCD						varchar(10)			DEFAULT NULL						COMMENT '商品コード'
+,	DNRK						varchar(20)			DEFAULT NULL						COMMENT '電略'
+,	SHNM						varchar(50)			DEFAULT NULL						COMMENT '製品名称'
+,	SHNKKKMEI					varchar(20)			DEFAULT NULL						COMMENT '規格'
+,	SEKKBN						varchar(4)			DEFAULT NULL						COMMENT '請求区分'
+,	SR1RS						int					NOT NULL DEFAULT 0					COMMENT 'ケース入目'
+,	SR2RS						int					NOT NULL DEFAULT 0					COMMENT '中間入目'
+,	KHKBN						tinyint				NOT NULL DEFAULT 0					COMMENT '梱端区分'
+,	RTNO						varchar(20)			DEFAULT NULL						COMMENT 'ロット'
+,	LOTK						varchar(2)			DEFAULT NULL						COMMENT '管理区分'
+,	LOTS						varchar(2)			DEFAULT NULL						COMMENT '出荷区分'
+,	FCKBNKK						varchar(3)			DEFAULT NULL						COMMENT '工場コード'
+,	PL							int					NOT NULL DEFAULT 0					COMMENT 'パレット積付数'
+,	KKTSR1						int					NOT NULL DEFAULT 0					COMMENT '入荷予定ケース数量'
+,	PL_DIV						int					NOT NULL DEFAULT 0					COMMENT 'パレット枚数'
+,	PL_MOD						int					NOT NULL DEFAULT 0					COMMENT 'パレット端数'
+,	KKTSR2						int					NOT NULL DEFAULT 0					COMMENT '入荷予定中間数量'
+,	KKTSR3						int					NOT NULL DEFAULT 0					COMMENT '入荷予定バラ数量'
+,	WGT							decimal(10,3)		NOT NULL DEFAULT 0					COMMENT '入荷予定総重量'
+,	TRKMJ						varchar(8)			DEFAULT NULL						COMMENT 'ＤＢ取込時間（yyyymmdd）'
+,	TRKMJ_YYYY					varchar(4)			DEFAULT NULL						COMMENT 'ＤＢ取込時間（yyyy）'
+,	TRKMJ_MM					varchar(2)			DEFAULT NULL						COMMENT 'ＤＢ取込時間（mm）'
+,	TRKMJ_DD					varchar(2)			DEFAULT NULL						COMMENT 'ＤＢ取込時間（dd）'
+,	prev_key					varchar(255)		DEFAULT NULL						COMMENT '前列参照用キー'
+,	PRIMARY KEY (work_detail_id)
+,	KEY IX_wk_202000_details_work_id (work_id)
+,	CONSTRAINT FK_wk_202000_details_wk_202000_head
+		FOREIGN KEY (work_id) REFERENCES wk_202000_head (work_id)
+		ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='入荷ダウンロード一時テーブル明細 (入荷ダウンロード一時テーブル(明細))';//
+
+delimiter ;

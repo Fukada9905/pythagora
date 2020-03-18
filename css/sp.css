@@ -1,0 +1,189 @@
+
+
+/*************************************/
+/**      タブレット・スマホ共通     **/
+/*************************************/
+@media screen and  (max-width: 1180px) {
+	
+	
+	/****************************************************/
+	/**   共通    **/
+	/****************************************************/
+	.box_container{
+		padding: 0 10px;
+	}
+
+	section#over_btn > div{
+		right: 40px;
+		margin-right: 0;
+	}
+	/****************************************************/
+	/**   TOP    **/
+	/****************************************************/
+	
+	
+}
+
+
+
+@media screen and (max-width: 960px) {
+	
+	
+	/****************************************************/
+	/**   共通    **/
+	/****************************************************/
+	#top_navigation li{
+		width: 20.5%;
+		margin-right: 6%;
+	}
+
+	#top_navigation li:nth-child(5n){margin-right: 6%;}
+
+	#top_navigation li:nth-child(4n){margin-right: 0;	}
+
+
+	#main_navigation li{width: 30%;}
+	
+	#main_navigation li,
+	#main_navigation li:nth-child(4n){		
+		margin-right: 5%;		
+	}
+	
+
+	#main_navigation li:nth-child(3n){
+		margin-right: 0;
+	}
+	nav li{
+		width:100px;
+	}
+	nav li.none{
+		width:0px !important;
+		overflow: hidden;
+	}
+
+
+	
+
+
+}
+
+/*************************************/
+/**      タブレット・スマホ縦・一部横     **/
+/*************************************/
+@media screen and (max-width: 599px) {
+
+	header h1 img{
+		width:60%;
+	}
+	/****************************************************/
+	/**   共通    **/
+	/****************************************************/
+	#top_navigation li{
+		width: 30%;
+		margin-right: 5%;
+	}
+
+	#top_navigation li:nth-child(4n),
+	#top_navigation li:nth-child(5n){margin-right: 5%;}
+
+	#top_navigation li:nth-child(3n){margin-right: 0;	}
+
+
+
+	body{font-size: 14px !important;line-height:26px  !important;}
+
+	header h1{
+
+		display: block;
+		text-align: center;
+
+	}
+
+	header div.pankuzu{
+		width:100%;
+		text-align: center;
+	}
+
+	header div.logins {
+		padding-right: 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	.login_nav{
+		display: none;
+	}
+
+	
+
+	
+	dl.table_list,dl.table_list > *{display: block; width: 100%;padding: 0;}
+
+	dl.input_area_inner{
+		display: block;
+		margin-bottom:10px;
+	}
+	dl.input_area_inner > *{
+		display: block;
+		width:100%;
+	}
+
+	dl.input_area_inner dt{
+		width: 100%;
+	}
+
+	dl.input_area_inner dd{
+		padding-left: 0px;
+		padding-top:10px;
+
+	}
+
+	
+	
+	/****************************************************/
+	/**   TOP    **/
+	/****************************************************/
+	#main_navigation li{width: 48%;}
+	
+	#main_navigation li,
+	#main_navigation li:nth-child(3n){		
+		margin-right: 4%;		
+	}
+	
+
+	#main_navigation li:nth-child(2n){
+		margin-right: 0;
+	}
+	
+	
+}
+
+/*************************************/
+/**      タブレット・スマホ縦・一部横     **/
+/*************************************/
+@media screen and (max-width: 420px) {
+	#top_navigation li {
+		width: 48%;
+		margin-right: 4%;
+	}
+
+	#top_navigation li:nth-child(3n),
+	#top_navigation li:nth-child(4n),
+	#top_navigation li:nth-child(5n) {
+		margin-right: 4%;
+	}
+
+	#top_navigation li:nth-child(2n) {
+		margin-right: 0;
+	}
+
+}
+
+
+/*************************************/
+/**      OVER RIDE STYLES     **/
+/*************************************/
+
+input{
+
+}
